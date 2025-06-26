@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { projects } from "@/lib/data";
 import { Github, ArrowUpRight } from "lucide-react";
 
+const basePath = process.env.BASE_PATH || "";
+
 export default function ProjectsPage() {
   return (
     <div className="space-y-8">
@@ -17,7 +19,7 @@ export default function ProjectsPage() {
             {project.imageUrl && (
               <CardHeader className="p-0">
                 <Image
-                  src={project.imageUrl}
+                  src={`${basePath}${project.imageUrl}`}
                   alt={project.title}
                   width={600}
                   height={340}
